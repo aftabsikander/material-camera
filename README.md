@@ -1,3 +1,6 @@
+# Attention
+This is a modified version of original [Material Camera library](https://github.com/afollestad/material-camera) by [Aidan Follestad](https://github.com/afollestad). Please do check his repository as well.
+
 # Material Camera
 
 Android's video recording APIs are very difficult to figure out, especially since a lot of manufacturers
