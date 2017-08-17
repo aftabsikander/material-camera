@@ -36,6 +36,7 @@ At the moment this library is available at Jitpack.io, will be uploaded on jCent
 ```gradle
 repositories {
     jcenter()
+    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
     maven { url 'https://jitpack.io' }
 }
 ```
