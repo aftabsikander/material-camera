@@ -24,18 +24,16 @@ a bit of testing, but it's possible I missed something.
 [![Build Status](https://travis-ci.org/afollestad/material-camera.svg)](https://travis-ci.org/afollestad/material-camera)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-The Gradle dependency is available via [jCenter](https://bintray.com/drummer-aidan/maven/material-camera/view).
-jCenter is the default Maven repository used by Android Studio.
+
 
 ### Dependency
 
-Add Bintray to your repositories, for some reason this specific library doesn't seem to work via jCenter
-even though all of my other libraries do.
+At the moment this library is available at Jitpack.io, will be uploaded on jCenter later on.
 
 ```gradle
 repositories {
     jcenter()
-    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+    maven { url 'https://jitpack.io' }
 }
 ```
 
@@ -45,7 +43,7 @@ Add this in your module's `build.gradle` file:
 dependencies {
     // ... other dependencies
 
-    compile 'com.afollestad:material-camera:0.4.4'
+    compile 'com.github.aftabsikander:material-camera:0.4.4'
 }
 ```
 

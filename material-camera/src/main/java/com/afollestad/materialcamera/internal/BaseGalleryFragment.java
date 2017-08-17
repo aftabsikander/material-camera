@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
+
 import com.afollestad.materialcamera.R;
 import com.afollestad.materialcamera.util.CameraUtil;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -40,8 +41,8 @@ public abstract class BaseGalleryFragment extends Fragment
     super.onViewCreated(view, savedInstanceState);
     mOutputUri = getArguments().getString("output_uri");
     mControlsFrame = view.findViewById(R.id.controlsFrame);
-    mRetry = (Button) view.findViewById(R.id.retry);
-    mConfirm = (Button) view.findViewById(R.id.confirm);
+      mRetry = view.findViewById(R.id.retry);
+      mConfirm = view.findViewById(R.id.confirm);
 
     mPrimaryColor = getArguments().getInt(CameraIntentKey.PRIMARY_COLOR);
     if (CameraUtil.isColorDark(mPrimaryColor)) {

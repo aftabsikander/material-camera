@@ -27,9 +27,12 @@ android {
 repositories {
     jcenter()
     maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+    maven { url "http://dl.bintray.com/aftabsikander/maven" }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile project(':library')
-    compile 'com.android.support:appcompat-v7:' + versions.supportLib
+/*    implementation project(':material-camera')*/
+    compile 'com.github.aftabsikander:material-camera:0.4.4'
+    implementation 'com.android.support:appcompat-v7:' + versions.supportLib
 }

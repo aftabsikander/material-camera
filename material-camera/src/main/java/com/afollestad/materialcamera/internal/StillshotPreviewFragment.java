@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
+
 import com.afollestad.materialcamera.R;
 import com.afollestad.materialcamera.util.ImageUtil;
 
@@ -44,7 +45,7 @@ public class StillshotPreviewFragment extends BaseGalleryFragment {
   @Override
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    mImageView = (ImageView) view.findViewById(R.id.stillshot_imageview);
+      mImageView = view.findViewById(R.id.stillshot_imageview);
 
     mConfirm.setText(mInterface.labelConfirm());
     mRetry.setText(mInterface.labelRetry());

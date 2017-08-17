@@ -4,16 +4,20 @@ buildscript {
     apply from: './dependencies.gradle'
 
     repositories {
+        google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:' + versions.gradlePlugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath "com.diffplug.spotless:spotless-plugin-gradle:" + versions.spotlessPlugin
     }
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 

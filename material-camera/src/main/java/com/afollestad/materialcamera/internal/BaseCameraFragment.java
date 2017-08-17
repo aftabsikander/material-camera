@@ -1,11 +1,5 @@
 package com.afollestad.materialcamera.internal;
 
-import static android.app.Activity.RESULT_CANCELED;
-import static com.afollestad.materialcamera.internal.BaseCaptureActivity.CAMERA_POSITION_BACK;
-import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_ALWAYS_ON;
-import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_AUTO;
-import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_OFF;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
@@ -30,13 +24,21 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.afollestad.materialcamera.MaterialCamera;
 import com.afollestad.materialcamera.R;
 import com.afollestad.materialcamera.util.CameraUtil;
 import com.afollestad.materialcamera.util.Degrees;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+
 import java.io.File;
+
+import static android.app.Activity.RESULT_CANCELED;
+import static com.afollestad.materialcamera.internal.BaseCaptureActivity.CAMERA_POSITION_BACK;
+import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_ALWAYS_ON;
+import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_AUTO;
+import static com.afollestad.materialcamera.internal.BaseCaptureActivity.FLASH_MODE_OFF;
 
 /** @author Aidan Follestad (afollestad) */
 abstract class BaseCameraFragment extends Fragment
@@ -110,11 +112,11 @@ abstract class BaseCameraFragment extends Fragment
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    mDelayStartCountdown = (TextView) view.findViewById(R.id.delayStartCountdown);
-    mButtonVideo = (ImageButton) view.findViewById(R.id.video);
-    mButtonStillshot = (ImageButton) view.findViewById(R.id.stillshot);
-    mRecordDuration = (TextView) view.findViewById(R.id.recordDuration);
-    mButtonFacing = (ImageButton) view.findViewById(R.id.facing);
+      mDelayStartCountdown = view.findViewById(R.id.delayStartCountdown);
+      mButtonVideo = view.findViewById(R.id.video);
+      mButtonStillshot = view.findViewById(R.id.stillshot);
+      mRecordDuration = view.findViewById(R.id.recordDuration);
+      mButtonFacing = view.findViewById(R.id.facing);
     if (mInterface.shouldHideCameraFacing() || CameraUtil.isChromium()) {
       mButtonFacing.setVisibility(View.GONE);
     } else {
@@ -125,7 +127,7 @@ abstract class BaseCameraFragment extends Fragment
               : mInterface.iconRearCamera());
     }
 
-    mButtonFlash = (ImageButton) view.findViewById(R.id.flash);
+      mButtonFlash = view.findViewById(R.id.flash);
     setupFlashMode();
 
     mButtonVideo.setOnClickListener(this);

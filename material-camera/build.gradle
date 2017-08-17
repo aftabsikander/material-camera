@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
+
+ext {
+    BINTRAY_REPO = 'maven'
+    BINTRAY_NAME = 'MaterialCamera'
+
+    PUBLISH_GROUP_ID = 'com.aftabsikander'
+    LIBRARY_NAME = 'material-camera'
+    PUBLISH_ARTIFACT_ID = 'material-camera'
+
+    LIBRARY_DESCRIPTION = 'Modified version of Material Camera library made by Aidan Follestad.'
+
+    SITE_URL = 'https://github.com/aftabsikander/material-camera'
+    GIT_URL = 'https://github.com/aftabsikander/material-camera.git'
+
+    PUBLISH_VERSION = versions.publishVersion
+
+    DEVELOPER_ID = 'aftabsikander'
+    DEVELOPER_NAME = 'Aftab Ali'
+    DEVELOPER_EMAIL = 'aftabsikanderoutlook.com'
+
+    LINCENSE_NAME = 'The Apache Software License, Version 2.0'
+    LINCENSE_URL = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    ALL_LINCENSE = ["Apache-2.0"]
+
+
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.publishVersionCode
+        versionName versions.publishVersion
+        vectorDrawables.useSupportLibrary = true
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:' + versions.supportLib
+    implementation 'com.afollestad:easyvideoplayer:' + versions.easyVideoPlayer
+    implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
+
+}
+
+apply from: 'https://raw.githubusercontent.com/aftabsikander/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/aftabsikander/JCenter/master/bintrayv1.gradle'
+apply from: 'https://raw.githubusercontent.com/afollestad/aidanfollestad.com/master/android-lib-release.gradle'

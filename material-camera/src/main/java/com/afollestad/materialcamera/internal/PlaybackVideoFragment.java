@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.afollestad.easyvideoplayer.EasyVideoCallback;
 import com.afollestad.easyvideoplayer.EasyVideoPlayer;
 import com.afollestad.materialcamera.R;
@@ -88,7 +89,7 @@ public class PlaybackVideoFragment extends Fragment
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    mPlayer = (EasyVideoPlayer) view.findViewById(R.id.playbackView);
+      mPlayer = view.findViewById(R.id.playbackView);
     mPlayer.setCallback(this);
 
     mPlayer.setSubmitTextRes(mInterface.labelConfirm());
